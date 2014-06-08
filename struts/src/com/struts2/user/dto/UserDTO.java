@@ -1,21 +1,15 @@
 package com.struts2.user.dto;
 
 public class UserDTO {
-	private String name;
-	private int age;
+	private String email;
 	private String password;
+	private String passwordConfirming;
 	
-	public String getName() {
-		return name;
+	public String getEmail() {
+		return email;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;
@@ -23,6 +17,14 @@ public class UserDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getPasswordConfirming() {
+		return passwordConfirming;
+	}
+	public void setPasswordConfirming(String passwordConfirming) {
+		this.passwordConfirming = passwordConfirming;
+	}
+	
+
 	
 
 }

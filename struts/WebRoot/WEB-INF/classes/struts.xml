@@ -7,12 +7,7 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<constant name="struts.i18n.encoding" value="GBK" />
     <constant name="struts.devMode" value="true" />
-    <package name="user" namespace="/user" extends="struts-default">
-        <action name="hello">
-            <result>/Hello.jsp</result>
-        </action>
-        <action name="user" class="com.struts2.path.action.PathAction">
-        	<result>/user_add.jsp</result>
-        </action>
-    </package>
+
+	<include file="com/struts2/path/action/index.xml"/>
+	<include file="com/struts2/path/action/signin.xml"/>
 </struts>

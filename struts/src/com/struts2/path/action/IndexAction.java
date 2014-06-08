@@ -5,16 +5,21 @@ import com.struts2.user.model.User;
 import com.struts2.user.dto.UserDTO;
 
 
-public class PathAction extends ActionSupport{	
+public class IndexAction extends ActionSupport{	
 	
 	private User user=new User();
 	private UserDTO userDTO=new UserDTO();
 	
 	public String add() {
-		user.setName(userDTO.getName());
-		user.setAge(userDTO.getAge());
-		System.out.println("name=" + user.getName());
-		System.out.println("age=" + user.getAge());
+		user.setEmail(userDTO.getEmail());
+		user.setPassword(userDTO.getPassword());
+		System.out.println("user=" + user.getEmail());
+		System.out.println("password=" + user.getPassword());
+		return SUCCESS;
+	}
+	public String signIn(){
+		//检测user password
+		
 		return SUCCESS;
 	}
 
@@ -27,14 +32,14 @@ public class PathAction extends ActionSupport{
 	}
 
 
-//
-//	public User getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
 
 	

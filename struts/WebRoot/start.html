@@ -80,12 +80,15 @@
           <h1>
           <form action="user/user!add" method="post">
           <div class="form-group">
-             <input name="userDTO.name" type="text" placeholder="Email" class="form-control">          
+             <input name="userDTO.email" type="text" placeholder="电子邮件" class="form-control">          
           </div>
           <div class="form-group">
-            <input name="userDTO.password" type="password" placeholder="Password" class="form-control">
+            <input name="userDTO.password" type="password" placeholder="密码" class="form-control">
           </div>
-          <p><button class="btn btn-success btn-lg btn-block" role="button" type="submit" formaction="user/user!add">注册 &raquo;</button></p>
+          <div class="form-group">
+            <input name="userDTO.passwordConfirming" type="password" placeholder="密码确认" class="form-control">
+          </div>
+          <p><button class="btn btn-success btn-lg btn-block" role="button" type="submit" formaction="user!add">注册 &raquo;</button></p>
           </form>
           </h1>
           </div>
