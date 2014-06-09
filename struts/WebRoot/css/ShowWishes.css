@@ -67,3 +67,11 @@ footer {
     width: 50%; /* 6 columns */
   }
 }
+
+.navbar-nav.navbar-right:last-child{
+margin-right: 15px;
+}
+
+.col-xs-3{
+  top:180px;
+right: -50px;}

@@ -81,3 +81,7 @@ body {
   position: relative;
   top: 38px;
 }
+
+.navbar-nav.navbar-right:last-child{
+margin-right: 15px;
+}
