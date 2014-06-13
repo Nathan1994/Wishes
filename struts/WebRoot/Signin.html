@@ -30,7 +30,7 @@
 
     <div class="container">
 
-      <form class="form-signin" role="form" method="post" >
+      <form class="form-signin" role="form" onsubmit="return validate_form_email(this);" method="post" action="#">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input name="user.email" type="text" class="form-control" placeholder="Email address" required autofocus>
         <input name="user.password" type="password" class="form-control" placeholder="Password" required>
@@ -46,5 +46,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+   <script src="js/InputCheck.js"></script>
+
   </body>
 </html>
