@@ -23,6 +23,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Custom styles for this template -->
     <link href="css/ShowWishes.css" rel="stylesheet">
 
+    <link href="css/buttons.css" rel="stylesheet">
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -35,31 +37,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   <body>
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">你好！<s:property value="user.email"/></a>
+          <a class="navbar-brand" href="#">你好！<s:property value="user.getName()"/></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">心愿墙</a></li>
+            <li class="active"><a href="ShowWishes.html">心愿墙</a></li>
             <li><a href="NewWishEdit.html">发布心愿</a></li>
             <li><a href="ManageWishes.html">管理心愿</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="start.html">注销</a></li>
+          </ul>
         </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
     </div><!-- /.navbar -->
 
     <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">
 
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="ShowWishes">Toggle nav</button>
           </p>
@@ -71,51 +68,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="col-6 col-sm-6 col-lg-4">
               <h4>王远</h4>
               <p>我希望有同学能帮我写javaEE项目。</p>
-              <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
+              <p><a class="btn btn-default" href="PickUp.html" role="button">查看详情 &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
               <h4>刘清</h4>
               <p>很想找一名同伴端午节去骑行。</p>
-              <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
+              <p><a class="btn btn-default" href="PickUp.html" role="button">查看详情 &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
               <h4>周玉龙</h4>
               <p>想请一个认真、负责的同学帮我天梯上分。</p>
-              <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
+              <p><a class="btn btn-default" href="PickUp.html" role="button">查看详情 &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
               <h4>郑乃豪</h4>
               <p>期末考试请枪手。</p>
-              <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
+              <p><a class="btn btn-default" href="PickUp.html" role="button">查看详情 &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
               <h4>鲁优</h4>
               <p>我的心愿是让别的心愿都实现不了！</p>
-              <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
+              <p><a class="btn btn-default" href="PickUp.html" role="button">查看详情 &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
               <h4>时雨</h4>
               <p>希望有人能帮我带午饭。</p>
-              <p><a class="btn btn-default" href="#" role="button">查看详情 &raquo;</a></p>
+              <p><a class="btn btn-default" href="PickUp.html" role="button">查看详情 &raquo;</a></p>
             </div><!--/span-->
           </div><!--/row-->
+        
+          <div class="showmore">
+          <span class="button-wrap button-download">
+            <a class="button button-circle button-flat button-flat-primary glow" href="#">更多心愿
+            </a>
+          </span>
+        </div>
         </div><!--/span-->
 
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-            <a href="#" class="list-group-item active"></a>
-            <a href="#" class="list-group-item">学习</a>
-            <a href="#" class="list-group-item">音乐</a>
-            <a href="#" class="list-group-item">旅行</a>
-            <a href="#" class="list-group-item">运动</a>
-            <a href="#" class="list-group-item">情感</a>
-            <a href="#" class="list-group-item">生活</a>
-            <a href="#" class="list-group-item">游戏</a>
-            <a href="#" class="list-group-item">影视</a>
-            <a href="#" class="list-group-item">职业</a>
-            <a href="#" class="list-group-item">乱七八糟</a>
-          </div>
-        </div><!--/span-->
+<!--         <div class="col-xs-3 sidebar-offcanvas">
+          <span class="button-wrap button-download">
+            <a class="button button-circle button-flat button-flat-primary glow" href="#">更多心愿
+            </a>
+          </span>
+        </div> -->
       </div><!--/row-->
 
       <hr>
