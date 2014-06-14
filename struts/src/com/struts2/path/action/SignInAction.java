@@ -8,7 +8,7 @@ public class SignInAction extends ActionSupport{
 	
 	public String signin(){
 		
-		System.out.println("user="+user.getEmail());
+//		System.out.println("user="+user.getEmail());
 		return SUCCESS;
 		
 	}
