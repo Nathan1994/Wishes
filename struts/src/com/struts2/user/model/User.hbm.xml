@@ -11,6 +11,8 @@
 	<id name = "id"> </id>
 	<property name="name"> </property>
 	<property name="age"> </property>
+	
+	
 </class>
 
 </hibernate-mapping>
