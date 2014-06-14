@@ -9,5 +9,5 @@
     <constant name="struts.devMode" value="true" />
 
 	<include file="com/struts2/path/action/index.xml"/>
-	<include file="com/struts2/path/action/signin.xml"/>
+	<include file="com/struts2/path/action/register.xml"/>
 </struts>

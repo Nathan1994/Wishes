@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao{
 		// TODO Auto-generated method stub
 		Session session = hsf.getSession();
 		try {
-			String sql = "from Users as u where u.username=? and u.password=?";
+			String sql = "from User as u where u.name=? and u.password=?";
 			// String sql = "from Users";
 			Query query = session.createQuery(sql);
 			query.setString(0, name);
@@ -55,5 +55,34 @@ public class UserDaoImpl implements UserDao{
 			hsf.closeSession();
 		}
 	}
+	
+	@Override
+	public boolean hasSameName(String username) {
+		Session session = hsf.getSession();
+		try {
+			String sql = "from User u where u.name=?";
+			Query query = session.createQuery(sql);
+			query.setString(0, username);
+			List list = query.list();
+			Iterator itor = list.iterator();
+			while (itor.hasNext()) {
+				User user = (User) itor.next();
+				String name = user.getName();
+				if (name.equals(username)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("UserDaoImpl.hasSameName() ������������:");
+			e.printStackTrace();
+			return false;
+		} finally {
+			hsf.closeSession();
+		}
+		return false;
+	}
+
 
 }

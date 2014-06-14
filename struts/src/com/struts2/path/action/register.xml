@@ -6,8 +6,9 @@
 <struts>
 
     <package name="signin" namespace="/" extends="struts-default">
-        <action name="signin" class="com.struts2.path.action.SignInAction">
+        <action name="signin" class="com.struts2.path.action.RegisterAction">
         	<result>/ShowWishes.jsp</result>
+        	<result name="error">/SigninError.html</result>
         </action>
     </package>
 </struts>
