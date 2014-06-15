@@ -14,12 +14,20 @@ public class IndexAction extends ActionSupport{
 	private UserDTO userDTO=new UserDTO();
 	
 	public String add() {
+		System.out.println(userDTO.getPassword().compareTo(userDTO.getPasswordConfirming()));
+		if(userDTO.getPassword().compareTo(userDTO.getPasswordConfirming())==-1){
+			System.out.println("error");
+			return "error";
+		}
+		if(userDao.hasSameName(userDTO.getEmail())){
+			return "false";
+		}
 		user.setName(userDTO.getEmail());
 		user.setPassword(userDTO.getPassword());
-
 		System.out.println("user=" + user.getName());
 		System.out.println("password=" + user.getPassword());
 		userDao.addUser(user);
+		
 		return SUCCESS;
 	}
 	public String signIn(){

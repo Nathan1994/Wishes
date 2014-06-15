@@ -8,6 +8,8 @@
     <package name="user" namespace="/" extends="struts-default">
         <action name="user" class="com.struts2.path.action.IndexAction">
         	<result>/ShowWishes.jsp</result>
+        	<result name="error">/start.html</result>
+        	<result name="false">/starterror.html</result>
         </action>
         
     </package>
