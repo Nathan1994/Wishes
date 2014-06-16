@@ -1,7 +1,10 @@
 package com.struts2.path.action;
 
+import java.util.Map;
+
 import com.hibernate.dao.UserDao;
 import com.hibernate.dao.UserDaoImpl;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.user.model.Operation;
 import com.struts2.user.model.User;
@@ -27,6 +30,11 @@ public class IndexAction extends ActionSupport{
 		System.out.println("user=" + user.getName());
 		System.out.println("password=" + user.getPassword());
 		userDao.addUser(user);
+		
+		ActionContext actionContext = ActionContext.getContext(); 
+		Map session = actionContext.getSession();
+		session.put("USER_LOGIN", user);
+		 
 		
 		return SUCCESS;
 	}

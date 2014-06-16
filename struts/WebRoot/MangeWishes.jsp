@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="US-ASCII"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,6 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
+  	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>管理你的心愿！</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/ManageWishes.css" rel="stylesheet">
+    <link href="<%=basePath%>css/ManageWishes.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
 
@@ -120,7 +121,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
     </div><!-- /container -->
 
-<script src="js/ButtonDelete.js">
+<script src="<%=basePath%>js/ButtonDelete.js">
 </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->

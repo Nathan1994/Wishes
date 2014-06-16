@@ -10,4 +10,6 @@
 
 	<include file="com/struts2/path/action/index.xml"/>
 	<include file="com/struts2/path/action/register.xml"/>
+	<include file="com/struts2/path/action/showwishes.xml"/>
+	<include file="com/struts2/path/action/newwish.xml"/>
 </struts>

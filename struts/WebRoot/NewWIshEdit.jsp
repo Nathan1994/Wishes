@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="US-ASCII"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,6 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
+  	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +18,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>发布新的心愿！</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="<%=basePath%>css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/NewWishEdit.css" rel="stylesheet">
+    <link href="<%=basePath%>css/NewWishEdit.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -53,10 +54,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="container">
       <div class="jumbotron">
         <h1>编辑你的心愿！：</h1>
-    <textarea  class="form-control" rows="10" cols="90" placeholder="在此处输入："></textarea>
-    <p></p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">马上发布！</a></p>
+    <form method="get">
+    	<input  class="form-control" name="wish.content" rows="10" cols="90" placeholder="在此处输入："></textarea>
+    	<p></p>
+        <p><button class="btn btn-lg btn-success"  type="submit" formaction="newwish/addwish" >马上发布！</a></p>
+    </form>
       </div>
+
 
       <div class="row marketing">
         <h2>曾经发布的心愿：</h2>

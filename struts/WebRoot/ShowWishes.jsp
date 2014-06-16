@@ -8,6 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
+  	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,8 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="ShowWishes.html">心愿墙</a></li>
-            <li><a href="NewWishEdit.html">发布心愿</a></li>
-            <li><a href="ManageWishes.html">管理心愿</a></li>
+            <li><a href="wish/add">发布心愿</a></li>
+            <li><a href="wish/manage">管理心愿</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="start.html">注销</a></li>

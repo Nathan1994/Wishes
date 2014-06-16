@@ -32,6 +32,7 @@
         <property name="hbm2ddl.auto">update</property> 
 
         <mapping resource="com/struts2/user/model/User.hbm.xml"/>
+        <mapping resource="com/struts2/user/model/Wish.hbm.xml"/>
 
     </session-factory>
 
