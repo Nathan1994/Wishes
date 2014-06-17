@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <!-- <div class="container"> -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">你好！12345</a>
+          <a class="navbar-brand" href="#">你好！<s:property value="session.get("USER_LOGIN").getName"/></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="container">
       <div class="jumbotron">
         <h1>编辑你的心愿！：</h1>
-    <form method="get">
+    <form method="post">
     	<input  class="form-control" name="wish.content" rows="10" cols="90" placeholder="在此处输入："></textarea>
     	<p></p>
         <p><button class="btn btn-lg btn-success"  type="submit" formaction="newwish/addwish" >马上发布！</a></p>

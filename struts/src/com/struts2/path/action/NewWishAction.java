@@ -22,14 +22,14 @@ public class NewWishAction extends ActionSupport {
 	    Map session = actionContext.getSession();    //取得session
 	    userLogin = (User)session.get("USER_LOGIN");       //从session取得用户
 		wish.setUsername(userLogin.getName());
-		wish.setId(1);
+		int maxId = wishDao.getMaxId();
+		wish.setId(maxId+1);
 		Date d =new Date();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");   
 		String str=sdf.format(d);
 		wish.setDate(str);
-		
 		wishDao.addWish(wish);
-		System.out.println(wish.getUsername());
+		
 		
 		return SUCCESS;
 	}
