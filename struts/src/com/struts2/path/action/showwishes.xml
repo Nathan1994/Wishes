@@ -9,7 +9,7 @@
         <action name="add" >
         	<result>/NewWIshEdit.jsp</result>
         </action>
-        <action name="manage" >
+        <action name="manage" class="com.struts2.path.action.ShowWishesAction">
         	<result>/MangeWishes.jsp</result>
         </action>
         

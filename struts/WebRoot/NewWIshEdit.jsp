@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <!-- <div class="container"> -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">你好！<s:property value="session.get("USER_LOGIN").getName"/></a>
+          <a class="navbar-brand" href="#">你好！</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+。<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -36,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <!-- <div class="container"> -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">你好！12345</a>
+          <a class="navbar-brand" href="#">你好！</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -62,23 +63,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="bs-example">
 
         <div class="list-group">
-          <div id="001">
+        
+          
+          <s:iterator value="#request.userWishes">
+          <div id="<s:property value="id"/>">
           <a href="#" class="list-group-item">
-            <h5 class="list-group-item-heading">2014.06.06<br><span class="badge">14</span></h5>
-            <p class="list-group-item-text">心愿内容1Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          </a> 
-          <button type="button" class="btn btn-default" onclick="deleteWish(this.parentNode.id)"> 
-            <span class="glyphicon glyphicon-remove"></span>删除
-          </button>
-          <button type="button" class="btn btn-default"> 
-            <span class="glyphicon glyphicon-pencil"></span>修改
-          </button>  
-          <p></p>   
-        </div>
-          <div id="002">
-          <a href="#" class="list-group-item">
-            <h5 class="list-group-item-heading">2014.06.05<br><span class="badge">30</span></h5>
-            <p class="list-group-item-text">心愿内容2Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            <h5 class="list-group-item-heading"><s:property value="date" /><br><span class="badge">7</span></h5>
+            <p class="list-group-item-text"><s:property value="content"/></p>
           </a>
           <button type="button" class="btn btn-default" onclick="deleteWish(this.parentNode.id)"> 
             <span class="glyphicon glyphicon-remove"></span>删除
@@ -88,32 +79,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </button>  
           <p></p>   
           </div>
-          <div id="003">
-          <a href="#" class="list-group-item">
-            <h5 class="list-group-item-heading">2014.06.04<br><span class="badge">21</span></h5>
-            <p class="list-group-item-text">心愿内容3Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          </a>
-          <button type="button" class="btn btn-default" onclick="deleteWish(this.parentNode.id)"> 
-            <span class="glyphicon glyphicon-remove"></span>删除
-          </button>
-          <button type="button" class="btn btn-default"> 
-            <span class="glyphicon glyphicon-pencil"></span>修改
-          </button>  
-          <p></p>   
-          </div>
-          <div id="004">
-          <a href="#" class="list-group-item">
-            <h5 class="list-group-item-heading">2014.06.03<br><span class="badge">7</span></h5>
-            <p class="list-group-item-text">心愿内容4Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          </a>
-          <button type="button" class="btn btn-default" onclick="deleteWish(this.parentNode.id)"> 
-            <span class="glyphicon glyphicon-remove"></span>删除
-          </button>
-          <button type="button" class="btn btn-default"> 
-            <span class="glyphicon glyphicon-pencil"></span>修改
-          </button>  
-          <p></p>   
-          </div>
+          
+          </s:iterator>
+
+      
+
+
+
         </div>
       </div>
       </div>

@@ -47,4 +47,23 @@ public class WishDaoImpl implements WishDao {
 		}
 	}
 
+	@Override
+	public List getAllWishes(String userName) {
+		// TODO Auto-generated method stub
+		Session session = hsf.getSession();
+		try{
+			String sql = "from Wish as w where w.username=?";
+			Query query = session.createQuery(sql);
+			query.setString(0, userName);
+			List list = query.list();
+			return list;
+		}catch (Exception e) {
+			System.out.println("WishDaoImpl.getAllWishes()");
+			e.printStackTrace();
+			return null;
+		} finally {
+			hsf.closeSession();
+		}
+	}
+
 }
