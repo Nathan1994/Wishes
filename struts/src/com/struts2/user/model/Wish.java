@@ -7,6 +7,13 @@ public class Wish {
 	private String username;
 	private String content;
 	private String date;
+	private String receiver;
+	public String getReceiver() {
+		return receiver;
+	}
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
+	}
 	public int getId() {
 		return id;
 	}

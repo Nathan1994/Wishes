@@ -12,4 +12,5 @@
 	<include file="com/struts2/path/action/register.xml"/>
 	<include file="com/struts2/path/action/showwishes.xml"/>
 	<include file="com/struts2/path/action/newwish.xml"/>
+	<include file="com/struts2/path/action/managewish.xml"/>
 </struts>

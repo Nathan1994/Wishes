@@ -12,6 +12,14 @@
         <action name="manage" class="com.struts2.path.action.ShowWishesAction">
         	<result>/MangeWishes.jsp</result>
         </action>
-        
+        <action name="more" class="com.struts2.path.action.ShowAllWishesAction">
+        	<result>/MoreWishes.jsp</result>
+        </action>
+        <action name="pick" class="com.struts2.path.action.PickWishAction">
+        	<result>/PickUp.jsp</result>
+        </action>
+        <action name="receive" class="com.struts2.path.action.ReceiveWishAction">
+        	<result>/ShowWishes.jsp</result>
+        </action>
     </package>
 </struts>

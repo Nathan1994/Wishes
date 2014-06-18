@@ -67,18 +67,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           
           <s:iterator value="#request.userWishes">
           <div id="<s:property value="id"/>">
-          <a href="#" class="list-group-item">
-            <h5 class="list-group-item-heading"><s:property value="date" /><br><span class="badge">7</span></h5>
-            <p class="list-group-item-text"><s:property value="content"/></p>
-          </a>
-          <button type="button" class="btn btn-default" onclick="deleteWish(this.parentNode.id)"> 
-            <span class="glyphicon glyphicon-remove"></span>删除
-          </button>
-          <button type="button" class="btn btn-default"> 
-            <span class="glyphicon glyphicon-pencil"></span>修改
-          </button>  
+            <a href="#" class="list-group-item">
+               <h5 class="list-group-item-heading"><s:property value="date" /><br><span class="badge">7</span></h5>
+               <p class="list-group-item-text"><s:property value="content"/></p>
+            </a>
+            <form method="post" role="form">
+              <input name="wishId" type="hidden" value="<s:property value="id"/>" />
+              <button  class="btn btn-default"  type="submit" formaction="managewish/delete"> 
+                <span class="glyphicon glyphicon-remove"></span>删除
+              </button>
+              <button type="button" class="btn btn-default"> 
+                <span class="glyphicon glyphicon-pencil"></span>修改
+              </button>  
+            </form>
           <p></p>   
           </div>
+          
           
           </s:iterator>
 

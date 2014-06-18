@@ -100,7 +100,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
           <div class="showmore">
           <span class="button-wrap button-download">
-            <a class="button button-circle button-flat button-flat-primary glow" href="#">更多心愿
+            <a class="button button-circle button-flat button-flat-primary glow" href="wish/more">更多心愿
             </a>
           </span>
         </div>

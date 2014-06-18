@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,6 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
+  	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +19,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>小纸条</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=basePath%>css/bootstrap.css" rel="stylesheet">
+    <link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/buttons.css" rel="stylesheet">
-    <link href="css/PickUp.css" rel="stylesheet">
+    <link href="<%=basePath%>css/buttons.css" rel="stylesheet">
+    <link href="<%=basePath%>css/PickUp.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -58,11 +60,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <br>
             <!-- 以王远的心愿为例 -->
               <a class="list-group-item">
-                  <h5 class="list-group-item-heading">2014.06.06</h5>
-                  <p class="list-group-item-text">我希望有同学能帮我写javaEE项目。</p>
+                  <h5 class="list-group-item-heading"><s:property value="#request.WISH_LOAD.date"/></h5>
+                  <p class="list-group-item-text"><s:property value="#request.WISH_LOAD.content"/></p>
               </a> 
               <br><br><br>
-            <p><a href="#" class="button glow button-rounded button-flat-primary btn-group-lg">摘下心愿</a></p>
+            <form method="post" >
+            <input type="hidden" name="receiver" value="<s:property value="#session.USER_LOGIN.name"/>" />
+            <input type="hidden" name="wishId" value="<s:property value="#request.WISH_LOAD.id"/>" />
+            <p><button type="submit" formaction="wish/receive" class="button glow button-rounded button-flat-primary btn-group-lg">摘下心愿</button></p>
+            </form>
           </div>
 
           <!-- <div class="row marketing">

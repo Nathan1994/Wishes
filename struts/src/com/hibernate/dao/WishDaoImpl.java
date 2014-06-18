@@ -58,6 +58,24 @@ public class WishDaoImpl implements WishDao {
 			List list = query.list();
 			return list;
 		}catch (Exception e) {
+			System.out.println("WishDaoImpl.getAllWishes(name)");
+			e.printStackTrace();
+			return null;
+		} finally {
+			hsf.closeSession();
+		}
+	}
+
+	@Override
+	public List getAllWishes() {
+		// TODO Auto-generated method stub
+		Session session = hsf.getSession();
+		try{
+			String sql = "from Wish";
+			Query query = session.createQuery(sql);
+			List list = query.list();
+			return list;
+		}catch (Exception e) {
 			System.out.println("WishDaoImpl.getAllWishes()");
 			e.printStackTrace();
 			return null;
@@ -65,5 +83,70 @@ public class WishDaoImpl implements WishDao {
 			hsf.closeSession();
 		}
 	}
+
+	@Override
+	public void deleteWish(int id) {
+		// TODO Auto-generated method stub
+		Session session = hsf.getSession();
+		Transaction ts = null;
+		try{
+			ts = session.beginTransaction();
+			String sql = "delete from Wish where id=?";
+			Query query = session.createQuery(sql);
+			query.setInteger(0, id);
+			query.executeUpdate();
+			ts.commit();
+		}catch(Exception e){
+			System.out.println("WishDaoImpl.deleteWish()");
+			e.printStackTrace();
+		}finally{
+			hsf.closeSession();
+		}
+
+	}
+
+	@Override
+	public List getWishes(int id) {
+		// TODO Auto-generated method stub
+		Session session = hsf.getSession();
+		try{
+			String sql = "from Wish as w where w.id=?";
+			Query query = session.createQuery(sql);
+			query.setInteger(0, id);
+			List list = query.list();
+			return list;
+		}catch (Exception e) {
+			System.out.println("WishDaoImpl.getWish(id)");
+			e.printStackTrace();
+			return null;
+		} finally {
+			hsf.closeSession();
+		}
+	}
+
+	@Override
+	public void updateWish(Wish wish) {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		Session session = hsf.getSession();
+		Transaction ts = null;
+		try {
+			ts = session.beginTransaction();
+			session.update(wish);
+			ts.commit();
+		} catch (Exception e) {
+			System.out.println("WishDaoImpl.update()");
+			e.printStackTrace();
+		} finally {
+			hsf.closeSession();
+		}
+		
+	}
+
+
+	
+
+	
+	
 
 }

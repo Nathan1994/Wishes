@@ -12,6 +12,7 @@
 	<property name="username"> </property>
 	<property name="content"> </property>
 	<property name="date"> </property>
+	<property name="receiver"> </property>
 	
 	
 </class>
