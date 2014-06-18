@@ -6,7 +6,7 @@
 <struts>
 
     <package name="wish" namespace="/wish" extends="struts-default">
-        <action name="add" >
+        <action name="add" class="com.struts2.path.action.ShowWishesAction">
         	<result>/NewWIshEdit.jsp</result>
         </action>
         <action name="manage" class="com.struts2.path.action.ShowWishesAction">

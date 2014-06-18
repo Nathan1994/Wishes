@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -37,13 +38,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <!-- <div class="container"> -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">你好！</a>
+          <a class="navbar-brand" href="#">你好！<s:property value="#session.USER_LOGIN.name"/></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="ShowWishes.html">心愿墙</a></li>
-            <li class="active"><a href="NewWishEdit.html">发布心愿</a></li>
-            <li><a href="ManageWishes.html">管理心愿</a></li>
+            <li><a href="home">心愿墙</a></li>
+            <li class="active"><a href="wish/add">发布心愿</a></li>
+            <li><a href="wish/manage">管理心愿</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="start.html">注销</a></li>
@@ -64,27 +65,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
       <div class="row marketing">
         <h2>曾经发布的心愿：</h2>
-        <div class="col-lg-6">
-          <h4>2014.6.2</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>2014.6.2</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>2014.6.2</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        <div class="col-lg-12">          
+          <s:iterator value="#request.userWishes">
+          <h4><s:property value="date"/></h4>
+          <p><s:property value="content"/></p>
+          </s:iterator>
+          
         </div>
 
-        <div class="col-lg-6">
-          <h4>2014.6.3</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>2014.6.3</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>2014.6.3</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+     
       </div>
 
       <div class="footer">

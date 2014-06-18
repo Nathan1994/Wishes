@@ -2,7 +2,12 @@ package com.struts2.path.action;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.hibernate.dao.*;
 import com.struts2.user.model.*;
@@ -30,6 +35,10 @@ public class NewWishAction extends ActionSupport {
 		wish.setDate(str);
 		wishDao.addWish(wish);
 		
+
+		List<Wish> wishList = wishDao.getAllWishes(userLogin.getName());	
+		HttpServletRequest request = ServletActionContext.getRequest();
+		request.setAttribute("userWishes", wishList);
 		
 		return SUCCESS;
 	}

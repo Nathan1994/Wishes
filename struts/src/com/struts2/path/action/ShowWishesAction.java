@@ -25,16 +25,7 @@ public class ShowWishesAction extends ActionSupport {
 		ActionContext actionContext = ActionContext.getContext();   //取到struts容器
 	    Map session = actionContext.getSession();    //取得session
 	    userLogin = (User)session.get("USER_LOGIN");       //从session取得用户
-	    
-//	    System.out.print(userLogin.getName());
-		List<Wish> wishList = wishDao.getAllWishes(userLogin.getName());
-		
-//		Iterator iter = list.iterator();
-//		while(iter.hasNext()){
-//			Wish wish = (Wish)iter.next();
-//			System.out.println(wish.getId());
-//		}
-//		
+		List<Wish> wishList = wishDao.getAllWishes(userLogin.getName());	
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("userWishes", wishList);
 		

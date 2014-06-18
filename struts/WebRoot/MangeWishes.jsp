@@ -37,13 +37,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <!-- <div class="container"> -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">你好！</a>
+          <a class="navbar-brand" href="#">你好！<s:property value="#session.USER_LOGIN.name"/></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="ShowWishes.html">心愿墙</a></li>
-            <li><a href="NewWishEdit.html">发布心愿</a></li>
-            <li class="active"><a href="ManageWishes.html">管理心愿</a></li>
+            <li><a href="home">心愿墙</a></li>
+            <li><a href="wish/add">发布心愿</a></li>
+            <li class="active"><a href="wish/manage">管理心愿</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="start.html">注销</a></li>

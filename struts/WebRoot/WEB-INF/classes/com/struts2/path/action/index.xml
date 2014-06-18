@@ -11,6 +11,9 @@
         	<result name="error">/start.html</result>
         	<result name="false">/starterror.html</result>
         </action>
+        <action name="home">
+        	<result>/ShowWishes.jsp</result>
+        </action>
         
     </package>
 </struts>
